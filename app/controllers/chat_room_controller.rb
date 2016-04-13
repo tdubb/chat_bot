@@ -48,7 +48,7 @@ class ChatRoomController < ApplicationController
   end
 
   def destroy
-    Message.delete_all
+    Message.destroy_all
     redirect_to root_path
   end
 end
