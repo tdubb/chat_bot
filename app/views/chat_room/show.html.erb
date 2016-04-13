@@ -1,0 +1,20 @@
+<h1>ChatRoom</h1>
+
+
+<% if @messages.count > 1 %>
+  <% @messages.each do |m| %>
+    <%= m.sender == 1 ? ("me" + ": " + m.try(:text).to_s) : ("chat_bot" + ": " + m.try(:text).to_s) %>
+    <br>
+    <br>
+  <% end %>
+<% end %>
+<%= link_to "Delete", @message, :method => :delete, data: {:confirm => "Are you sure ?"}%>
+<%= form_tag("/chat_room", method: "post") do %>
+  <%= text_field_tag(:q, "", autofocus: true)  %>
+  <%= submit_tag("talk") %>
+<% end %>
+<br>
+<br>
+<br>
+<br>
+<br>
