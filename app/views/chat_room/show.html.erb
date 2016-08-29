@@ -1,9 +1,25 @@
-<h1>ChatRoom</h1>
+
+<!-- Nav Bar  -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="namelogo">&nbsp;</div>
+    <div class="friendly">A friendly little app that answers in song lyrics!</div>
+    </div>
+  </div>
+</nav>
+
+<!-- Transparent Robot img -->
+<div class="retrorobot">&nbsp;</div>
 
 
-<% if @messages.count > 1 %>
+  <% if @messages.count > 1 %>
   <% @messages.each do |m| %>
-    <%= m.sender == 1 ? ("me" + ": " + m.try(:text).to_s) : ("chat_bot" + ": " + m.try(:text).to_s) %>
+
+  <!-- Class chatbubblesty 1 & 2 refers to chatbubble style -->
+<div class="">
+  <%= m.sender == 1 ? ("<span class='chatbubblesty2 shadow'><strong>Truth Seeker</strong>" + ": " + m.try(:text).to_s + "</span>").html_safe : ("<span class='chatbubblesty shadow'><strong>Chat_bot</strong>" + ": " + m.try(:text).to_s + "</span>").html_safe%>
+</div>
+
     <br>
     <br>
   <% end %>
@@ -11,7 +27,9 @@
 <%= link_to "Delete", @message, :method => :delete %>
 <%= form_tag("/chat_room", method: "post") do %>
   <%= text_field_tag(:q, "", autofocus: true)  %>
+
   <%= submit_tag("talk") %>
+
 <% end %>
 <br>
 <br>

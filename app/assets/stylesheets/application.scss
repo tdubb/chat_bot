@@ -16,6 +16,17 @@
 @import "bootstrap";
 
 body {
-  margin-left: 20px;
-  margin-top: 10px;
-}
+  margin-left: 40px;
+  margin-top: 150px;
+  background: transparent;
+ }
+
+// Background Retro Dots img //
+ html {
+   background: 	  url('https://www.welovesolo.com/wp-content/uploads/2014/10/p17ts5lhomchu12vuv411671e0c5-details.jpg') no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+        width: 100%;
+ }
