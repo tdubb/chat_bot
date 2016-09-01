@@ -1,3 +1,5 @@
+<!-- Background Image -->
+<div class="polka"></div>
 
 <!-- Nav Bar  -->
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -25,12 +27,12 @@
   <% end %>
 <% end %>
 <%= link_to "Delete", @message, :method => :delete %>
+<div class="shadow2">
 <%= form_tag("/chat_room", method: "post") do %>
   <%= text_field_tag(:q, "", autofocus: true)  %>
-
   <%= submit_tag("talk") %>
-
 <% end %>
+</div>
 <br>
 <br>
 <br>

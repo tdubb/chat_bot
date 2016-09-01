@@ -78,3 +78,15 @@ div.friendly {
   background-repeat: no-repeat;
   margin-left: 900px;
 }
+
+// Form input box shadow //
+.shadow2 {
+  position: inherit;
+  box-shadow: rgba(0, 0, 0, 0.3) 30px 10px 10px;
+  bottom: -10px;
+  left: 50px;
+  border-width: 10px;
+  /* border-style: solid; */
+  /* border-color: transparent #FFF #FFF transparent; */
+  width: 219px;
+}
