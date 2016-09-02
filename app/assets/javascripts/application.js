@@ -14,14 +14,3 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
-
-
-//PARALLAX FUNCTION
-$(window).scroll(function(e){
-  parallax();
-});
-
-function parallax(){
-  var scrolled = $(window).scrollTop();
-  $('.polka').css('top',-(scrolled*0.4)+'px');
-}
