@@ -4,10 +4,8 @@ class ChatRoomController < ApplicationController
     @messages = Message.all
   end
 
-
   def create
     message = Message.create!(text: params[:q], sender: 1, receiver: 2)
-
     ::MusixMatchApi.new(ARGV, message)
     redirect_to root_path and return
   end

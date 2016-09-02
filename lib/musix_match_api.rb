@@ -2,6 +2,7 @@ class MusixMatchApi
   require 'musix_match'
 
   def self.new(argv, message)
+    set_api_key
     response = get_tracks(message)
     return if cycle_through_songs(response, message) && response.status_code == 200
     default_message
@@ -14,7 +15,6 @@ class MusixMatchApi
   end
 
   def self.get_tracks(message)
-    set_api_key
     response = MusixMatch.search_track q: message.text #, q_artist: "bon jovi"
   end
 
