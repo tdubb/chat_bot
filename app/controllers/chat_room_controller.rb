@@ -11,7 +11,7 @@ class ChatRoomController < ApplicationController
   end
 
   def destroy
-    Message.all.map(&:destroy)
+    Message.destroy_all
     redirect_to root_path
   end
 end
