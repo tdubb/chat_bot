@@ -32,7 +32,9 @@ class MusixMatchApi
           sentence_count = lyrics.lyrics_body
           sentence_count.split(/\.|\?|!/).each do |sen|
             if sen.split.include?(check_this) && sen.length > 10 #verifying key work is in the sentence and that the sentence is over 10 characters long
-              Message.create!(text: sen[0..sen[0..100].rindex("\n")].gsub(/\(.*\)/, "").gsub(/\[.*\]/, "").gsub(/\n/, ". "), sender: 2, receiver: 1)
+              #sen get from 0 up to the first index of 'n' within index 100 /
+              #gsub to remove parantheses, brackets with empty space and new line tags with single space
+              Message.create!(text: sen[0..sen[0..100].rindex("\n")].gsub(/\(.*\)|\[.*\]/, "").gsub(/\n/, ". "), sender: 2, receiver: 1)
               return true
             end
           end
