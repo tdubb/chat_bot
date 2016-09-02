@@ -17,8 +17,6 @@
 //= require_tree .
 
 
-
-
 //PARALLAX FUNCTION
 $(window).scroll(function(e){
   parallax();
