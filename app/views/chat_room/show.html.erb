@@ -26,7 +26,7 @@
 
   <!-- Class chatbubblesty 1 & 2 refers to chatbubble style -->
 <div class="">
-  <%= m.sender == 1 ? ("<span class='chatbubblesty2 shadow'><strong>Truth Seeker</strong>" + ": " + m.try(:text).to_s + "</span>").html_safe : ("<span class='chatbubblesty shadow'><strong>Chat_bot</strong>" + ": " + m.try(:text).to_s + "</span>").html_safe%>
+  <%= m.sender == 1 ? ("<span class='chatbubblesty2 shadow'><strong>Truth Seeker</strong>" + ": " + m.try(:text).to_s + "</span>").html_safe : ("<span class='chatbubblesty shadow'><strong>Chat_bot</strong>" + ": " + m.try(:text).to_s.gsub(".","") + "</span>").html_safe%>
 </div>
 
     <br>
@@ -40,6 +40,16 @@
   <%= submit_tag("talk") %>
 <% end %>
 </div>
+
+<script type='text/javascript'>
+  $(document).ready(function() {
+    console.log($('.chatbubblesty'));
+    setTimeout(function (){
+        var text = $('.chatbubblesty').last().text().slice(9);
+        responsiveVoice.speak(text, "UK English Male");
+    }, 300);
+  })
+</script>
 <br>
 <br>
 <br>

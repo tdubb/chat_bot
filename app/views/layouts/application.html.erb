@@ -3,6 +3,7 @@
 <head>
 
 <title>ChatBot</title>
+  <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
@@ -13,6 +14,7 @@
     <%= yield %>
   </body>
   <script type='text/javascript'>
+
     $(window).scroll(function(e){
       parallax();
     });
