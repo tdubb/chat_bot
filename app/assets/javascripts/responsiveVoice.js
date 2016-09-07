@@ -1,4 +1,6 @@
+src="http://code.responsivevoice.org/responsivevoice.js"
 var voiceToText = {
+
 
   loadText: (function() {if (typeof responsiveVoice != 'undefined') {
     console.log('ResponsiveVoice already loaded');
