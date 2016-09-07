@@ -40,17 +40,6 @@
   <%= submit_tag("talk") %>
 <% end %>
 </div>
-
-<script src="http://code.responsivevoice.org/responsivevoice.js"></script>
-<script type='text/javascript'>
-  $(document).ready(function() {
-    console.log($('.chatbubblesty'));
-    setTimeout(function (){
-        var text = $('.chatbubblesty').last().text().slice(9);
-        responsiveVoice.speak(text, "UK English Male");
-    }, 10000);
-  })
-</script>
 <br>
 <br>
 <br>
